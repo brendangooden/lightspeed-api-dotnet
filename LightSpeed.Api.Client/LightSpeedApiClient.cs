@@ -31,7 +31,7 @@ namespace LightSpeed.Api.Client
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
-        public LightSpeedApiClient(IRestApiConfiguration configuration, System.Net.Http.HttpClient httpClient) : base(configuration)
+        public LightSpeedApiClient(ILightSpeedApiConfiguration configuration, System.Net.Http.HttpClient httpClient) : base(configuration)
         {
             _httpClient = httpClient;
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings);
