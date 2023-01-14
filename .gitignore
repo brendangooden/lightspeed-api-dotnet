@@ -10,6 +10,9 @@
 *.userosscache
 *.sln.docstates
 
+#Test API Config - don't commit this to GIT
+api_config.json
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
