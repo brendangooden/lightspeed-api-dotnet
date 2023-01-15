@@ -10,7 +10,7 @@ namespace LightSpeed.Api.TestApp.Models;
 public class LightSpeedStore : ILightSpeedStore, IApiToken
 {
     [JsonProperty("store_domain")]
-    public required string StoreDomain { get; init; }
+    public required string StoreDomain { get; set; }
     [JsonProperty("api_token")]
-    public required string ApiToken { get; init; }
+    public required string ApiToken { get; set; }
 }
