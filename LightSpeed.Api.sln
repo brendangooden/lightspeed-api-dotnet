@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightSpeed.Api.Client", "LightSpeed.Api.Client\LightSpeed.Api.Client.csproj", "{BB19B65A-1A9B-4E9F-823B-B7E8D20853DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightSpeed.Api", "LightSpeed.Api\LightSpeed.Api.csproj", "{BB19B65A-1A9B-4E9F-823B-B7E8D20853DC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightSpeed.Api.TestApp", "LightSpeed.Api.TestApp\LightSpeed.Api.TestApp.csproj", "{5C2B247B-5696-446D-8F95-9D11C2E83E19}"
 EndProject

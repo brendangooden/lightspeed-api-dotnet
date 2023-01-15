@@ -9,11 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\api_config.json" Link="api_config.json" />
+    <Content Include="..\api_config.json" Link="api_config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LightSpeed.Api.Client.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LightSpeed.Api.Shared\LightSpeed.Api.Shared.csproj" />
+    <ProjectReference Include="..\LightSpeed.Api\LightSpeed.Api.csproj" />
   </ItemGroup>
 
 </Project>

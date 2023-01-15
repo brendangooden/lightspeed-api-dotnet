@@ -5,13 +5,13 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
-using LightSpeed.Api.Client.Configuration;
-using LightSpeed.Api.Client.Extensions;
+using LightSpeed.Api.Configuration;
+using LightSpeed.Api.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using NullValueHandling = Newtonsoft.Json.NullValueHandling;
 
-namespace LightSpeed.Api.Client.Reporting;
+namespace LightSpeed.Api.Reporting;
 
 public static class ReportingApiHelper
 {

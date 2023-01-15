@@ -17,4 +17,8 @@
 	  <ProjectReference Include="..\LightSpeed.Api.Shared\LightSpeed.Api.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Client\" />
+	</ItemGroup>
+
 </Project>

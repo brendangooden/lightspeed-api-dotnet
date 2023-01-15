@@ -1,9 +1,6 @@
-﻿using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
 
-namespace LightSpeed.Api.Client.Configuration;
+namespace LightSpeed.Api.Configuration;
 
 /// <summary>
 /// Used for authenticating with LightSpeed API with a personal token.
@@ -12,6 +9,7 @@ public class TokenApiBase : ILightSpeedApiConfiguration
 {
     public required string ApiToken { get; init; }
     public required string StoreDomain { get; init; }
+    [SetsRequiredMembers]
     public TokenApiBase(string storeDomain, string apiToken)
     {
         StoreDomain = storeDomain;

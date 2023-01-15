@@ -12,7 +12,7 @@
   "codeGenerators": {
     "openApiToCSharpClient": {
       "clientBaseClass": "ApiClientBase ",
-      "configurationClass": "IRestApiConfiguration",
+      "configurationClass": "ILightSpeedApiConfiguration",
       "generateClientClasses": true,
       "generateClientInterfaces": false,
       "clientBaseInterface": null,
@@ -41,10 +41,11 @@
       "useRequestAndResponseSerializationSettings": false,
       "serializeTypeInformation": false,
       "queryNullValue": "null",
-      "className": "LightSpeedApiClient",
+      "className": "LightSpeedApiClientV2",
       "operationGenerationMode": "SingleClientFromOperationId",
       "additionalNamespaceUsages": [
-        "System.Net.Http"
+        "System.Net.Http",
+        "LightSpeed.Api.Client.Configuration"
       ],
       "additionalContractNamespaceUsages": [],
       "generateOptionalParameters": true,
@@ -58,7 +59,7 @@
       "wrapResponseMethods": [],
       "generateResponseClasses": true,
       "responseClass": "SwaggerResponse",
-      "namespace": "LightSpeed.API.Client",
+      "namespace": "LightSpeed.Api.Client.V2",
       "requiredPropertiesMustBeDefined": false,
       "dateType": "System.DateTimeOffset",
       "jsonConverters": null,

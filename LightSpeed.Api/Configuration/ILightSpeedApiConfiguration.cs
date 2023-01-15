@@ -2,11 +2,9 @@
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using Flurl;
 using LightSpeed.Api.Shared.Interfaces;
-using Newtonsoft.Json.Linq;
 
-namespace LightSpeed.Api.Client.Configuration;
+namespace LightSpeed.Api.Configuration;
 
 /// <summary>
 /// A base interface used by the LightSpeedApiClient on how to authenticate requests, and what the base URL is.

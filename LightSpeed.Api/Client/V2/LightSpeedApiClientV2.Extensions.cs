@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace LightSpeed.Api.Client;
+namespace LightSpeed.Api.Client.V2;
 
-public partial class LightSpeedApiClient
+public partial class LightSpeedApiClientV2
 {
     partial void UpdateJsonSerializerSettings(Newtonsoft.Json.JsonSerializerSettings settings)
     {

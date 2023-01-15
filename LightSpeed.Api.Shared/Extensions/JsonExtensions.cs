@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace LightSpeed.Api.Client.Extensions;
+namespace LightSpeed.Api.Extensions;
 
 public static class ExtensionMethods
 {

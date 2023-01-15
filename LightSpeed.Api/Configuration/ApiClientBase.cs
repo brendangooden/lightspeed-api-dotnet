@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LightSpeed.Api.Client.Configuration;
+namespace LightSpeed.Api.Configuration;
 
 public class ApiClientBase
 {
