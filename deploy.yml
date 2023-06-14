@@ -1,0 +1,61 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'chore:') && !contains(github.event.head_commit.message, 'documentation:')"
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0
+      with:
+        versionSpec: '5.x'
+
+    - name: Use GitVersion
+      id: gitversion
+      uses: gittools/actions/gitversion/execute@v0
+
+    - name: Restore dependencies
+      run: dotnet restore ./src/WinForms.NullableBinding.sln
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release ./src/LightSpeed.Api.sln
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal --configuration Release ./src/LightSpeed.Api.sln
+
+    - name: Pack
+      run: dotnet pack --no-build --configuration Release /p:Version=${{ steps.gitversion.outputs.majorMinorPatch }} -o ./artifacts ./src/LightSpeed.Api.csproj
+
+    - name: Push NuGet package
+      run: dotnet nuget push "./artifacts/LightSpeed.Api.Client.${{ steps.gitversion.outputs.majorMinorPatch }}.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+            tag_name: ${{ steps.gitversion.outputs.majorMinorPatch }}
+            release_name: Release ${{ steps.gitversion.outputs.majorMinorPatch }}
+            body: Release ${{ steps.gitversion.outputs.majorMinorPatch }}
+            
+    - name: Upload NuGet package as artifact
+      uses: actions/upload-artifact@v2
+      with:
+          name: "Nuget Package"
+          path: "./artifacts/LightSpeed.Api.Client.${{ steps.gitversion.outputs.majorMinorPatch }}.nupkg"
