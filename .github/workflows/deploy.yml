@@ -31,7 +31,7 @@ jobs:
       uses: gittools/actions/gitversion/execute@v0
 
     - name: Restore dependencies
-      run: dotnet restore ./src/WinForms.NullableBinding.sln
+      run: dotnet restore ./src/LightSpeed.Api.sln
 
     - name: Build
       run: dotnet build --no-restore --configuration Release ./src/LightSpeed.Api.sln
