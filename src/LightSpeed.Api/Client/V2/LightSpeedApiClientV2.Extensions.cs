@@ -60,9 +60,10 @@ public partial class LightSpeedApiClientV2
         var request = await CreateHttpRequestMessageAsync(CancellationToken.None).ConfigureAwait(false);
         request.Method = HttpMethod.Get;
 
-        var baseUrl = Flurl.Url.Parse(BaseUrl).RemovePath();
+        var baseUrl = Flurl.Url.Parse(BaseUrl).RemovePath().AppendPathSegment("api/2.0/report");
+        baseUrl.SetQueryParam("params", reportConfigJson);
 
-        request.RequestUri = new Uri(Url.Combine(baseUrl.ToString(), $"api/2.0/report?params={reportConfigJson}"));
+        request.RequestUri = new Uri(baseUrl.ToString());
 
         using var client = new HttpClient();
         var responseMessage = await client.SendAsync(request).ConfigureAwait(false);

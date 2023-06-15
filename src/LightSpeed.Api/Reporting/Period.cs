@@ -13,5 +13,5 @@ public class Period
     public DateTime End { get; set; }
 
     [JsonProperty("denormalise_time")]
-    public bool DenormaliseTime { get; set; }
+    public bool? DenormaliseTime { get; set; }
 }
