@@ -41,7 +41,7 @@ public partial class LightSpeedApiClientV2
     /// <param name="dateTo"></param>
     /// <param name="groupBy"></param>
     /// <returns></returns>
-    public async Task<IReadOnlyList<ReportSummaryData>> GetListAsync( DateTime dateFrom, DateTime dateTo, GroupBy groupBy)
+    public async Task<ReportResponseExtended> GenerateReportAsync( DateTime dateFrom, DateTime dateTo, GroupBy groupBy)
     {
         var request = CreateRequest(dateFrom, dateTo, groupBy);
         return await GenerateReportAsync(request);
@@ -53,7 +53,7 @@ public partial class LightSpeedApiClientV2
     /// </summary>
     /// <param name="requestObj"></param>
     /// <returns></returns>
-    public async Task<IReadOnlyList<ReportSummaryData>> GenerateReportAsync(ReportRequest requestObj)
+    public async Task<ReportResponseExtended> GenerateReportAsync(ReportRequest requestObj)
     {
         var reportConfigJson = requestObj.ToJson();
 
@@ -71,7 +71,7 @@ public partial class LightSpeedApiClientV2
 
         responseMessage.EnsureSuccessStatusCode();
 
-        var result = JsonConvert.DeserializeObject<ReportResponse>(payload);
+        var result = JsonConvert.DeserializeObject<ReportResponseExtended>(payload);
 
         var rows = result.Rows.SelectMany(x => x).SelectMany(x => x).ToList();
 
@@ -80,7 +80,7 @@ public partial class LightSpeedApiClientV2
         if (rows.Count != columns.Count)
             throw new Exception($"Number of rows/columns must match!\r\n\r\n{request.RequestUri}");
 
-        return columns.Select((a, i) =>
+        result.RowsFormatted = columns.Select((a, i) =>
         {
             var rowObj = rows[i];
             return new ReportSummaryData
@@ -93,6 +93,8 @@ public partial class LightSpeedApiClientV2
                 TotalTax = rowObj.TotalTax
             };
         }).ToList();
+
+        return result;
     }
 
     private ReportRequest CreateRequest(DateTime dateFrom, DateTime dateTo, GroupBy groupBy = GroupBy.day)

@@ -21,3 +21,11 @@ public class ReportResponse
     [JsonProperty("more_results")]
     public bool MoreResults { get; set; }
 }
+
+public class ReportResponseExtended : ReportResponse
+{
+    /// <summary>
+    /// Contains the formatted response data from the report.
+    /// </summary>
+    public IList<ReportSummaryData> RowsFormatted { get; set; }
+}
