@@ -4,17 +4,20 @@
 		<langversion>latest</langversion>
 		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-
+    <PackageId>LightSpeed.Api.Client</PackageId>
+    <Authors>Brendan Gooden</Authors>
+    <Description>A C# API Client for LightSpeed X-Series</Description>
+    <Copyright>Copyright 2023</Copyright>
+    <PackageTags>LightSpeed X-Series C# API Client</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/brendangooden/lightspeed-api-dotnet</RepositoryUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Flurl" Version="3.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\LightSpeed.Api.Shared\LightSpeed.Api.Shared.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

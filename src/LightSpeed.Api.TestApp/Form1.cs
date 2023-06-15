@@ -1,7 +1,7 @@
 using LightSpeed.Api.Client;
+using LightSpeed.Api.Client.Configuration;
 using LightSpeed.Api.Client.V2;
 using LightSpeed.Api.Client.V2Beta;
-using LightSpeed.Api.Configuration;
 using LightSpeed.Api.TestApp.Models;
 using Newtonsoft.Json;
 
@@ -19,8 +19,8 @@ public partial class Form1 : Form
 
         _storeConfig = JsonConvert.DeserializeObject<LightSpeedStore>(File.ReadAllText("api_config.json"));
         _httpClient = new HttpClient();
-        _apiClientBeta = new LightSpeedApiClientV2Beta(new TokenApiBase(_storeConfig.StoreDomain, _storeConfig.ApiToken), _httpClient);
-        _apiClient = new LightSpeedApiClientV2(new TokenApiBase(_storeConfig.StoreDomain, _storeConfig.ApiToken), _httpClient);
+        _apiClientBeta = new LightSpeedApiClientV2Beta(new TokenApiConfiguration(_storeConfig.StoreDomain, _storeConfig.ApiToken), _httpClient);
+        _apiClient = new LightSpeedApiClientV2(new TokenApiConfiguration(_storeConfig.StoreDomain, _storeConfig.ApiToken), _httpClient);
     }
     private async void btnTest_Click(object sender, EventArgs e)
     {

@@ -2,9 +2,8 @@
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using LightSpeed.Api.Shared.Interfaces;
 
-namespace LightSpeed.Api.Configuration;
+namespace LightSpeed.Api.Client.Configuration.Interfaces;
 
 /// <summary>
 /// A base interface used by the LightSpeedApiClient on how to authenticate requests, and what the base URL is.

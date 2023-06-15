@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightSpeed.Api", "LightSpee
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightSpeed.Api.TestApp", "LightSpeed.Api.TestApp\LightSpeed.Api.TestApp.csproj", "{5C2B247B-5696-446D-8F95-9D11C2E83E19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightSpeed.Api.Shared", "LightSpeed.Api.Shared\LightSpeed.Api.Shared.csproj", "{056D7C6F-7427-4D5C-A8DC-016DDEE80523}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{5C2B247B-5696-446D-8F95-9D11C2E83E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C2B247B-5696-446D-8F95-9D11C2E83E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C2B247B-5696-446D-8F95-9D11C2E83E19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{056D7C6F-7427-4D5C-A8DC-016DDEE80523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{056D7C6F-7427-4D5C-A8DC-016DDEE80523}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{056D7C6F-7427-4D5C-A8DC-016DDEE80523}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{056D7C6F-7427-4D5C-A8DC-016DDEE80523}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

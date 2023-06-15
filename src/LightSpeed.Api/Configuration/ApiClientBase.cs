@@ -1,8 +1,9 @@
 ﻿using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using LightSpeed.Api.Client.Configuration.Interfaces;
 
-namespace LightSpeed.Api.Configuration;
+namespace LightSpeed.Api.Client.Configuration;
 
 public class ApiClientBase
 {
