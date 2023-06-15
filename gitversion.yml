@@ -1,0 +1,17 @@
+mode: Mainline 
+commit-message-incrementing: Enabled
+
+branches:
+  master:
+    tag: ''
+    increment: None
+    regex: 'main'
+
+ignore:
+  sha: []
+
+merge-message-formats: {}
+
+major-version-bump-message: '^(?=.*breaking:|major:).*'
+minor-version-bump-message: '^(?=.*feature:|pull\srequest\smerged:).*'
+patch-version-bump-message: '^(?!.*chore:|.*documentation:).*'
