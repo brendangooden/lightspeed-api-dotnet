@@ -55,15 +55,13 @@ public partial class LightSpeedApiClientV2
     /// <returns></returns>
     public async Task<ReportResponseExtended> GenerateReportAsync(ReportRequest requestObj)
     {
-        var reportConfigJson = requestObj.ToJson();
-
         var request = await CreateHttpRequestMessageAsync(CancellationToken.None).ConfigureAwait(false);
-        request.Method = HttpMethod.Get;
+        request.Method = HttpMethod.Post;
 
-        var baseUrl = Flurl.Url.Parse(BaseUrl).RemovePath().AppendPathSegment("api/2.0/report");
-        baseUrl.SetQueryParam("params", reportConfigJson);
+        request.RequestUri = new Uri(Flurl.Url.Parse(BaseUrl).RemovePath().AppendPathSegment("api/2.0/report"));
 
-        request.RequestUri = new Uri(baseUrl.ToString());
+        var reportConfigJson = requestObj.ToJson();
+        request.Content = new System.Net.Http.StringContent(reportConfigJson, System.Text.Encoding.UTF8, "application/json");
 
         using var client = new HttpClient();
         var responseMessage = await client.SendAsync(request).ConfigureAwait(false);
@@ -98,7 +96,7 @@ public partial class LightSpeedApiClientV2
         return result;
     }
 
-    private ReportRequest CreateRequest(DateTime dateFrom, DateTime dateTo, GroupBy groupBy = GroupBy.day)
+    private static ReportRequest CreateRequest(DateTime dateFrom, DateTime dateTo, GroupBy groupBy = GroupBy.day)
     {
         var reportConfig = new ReportRequest()
         {
