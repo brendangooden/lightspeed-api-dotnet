@@ -63,8 +63,7 @@ public partial class LightSpeedApiClientV2
         var reportConfigJson = requestObj.ToJson();
         request.Content = new System.Net.Http.StringContent(reportConfigJson, System.Text.Encoding.UTF8, "application/json");
 
-        using var client = new HttpClient();
-        var responseMessage = await client.SendAsync(request).ConfigureAwait(false);
+        var responseMessage = await _httpClient.SendAsync(request).ConfigureAwait(false);
 
         var payload = await responseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
 
