@@ -2960,7 +2960,7 @@ namespace LightSpeed.Api.Client.V2Beta
             public string Text { get; }
         }
 
-        public bool ReadResponseAsString { get; set; }
+        public bool ReadResponseAsString { get; set; } = true;
 
         protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken)
         {
@@ -3578,7 +3578,7 @@ namespace LightSpeed.Api.Client.V2Beta
         /// <summary>
         /// The expiry timestamp in UTC.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("expires_at", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("expires_at", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string? Expires_at { get; set; } = default!;
 
         /// <summary>
@@ -3772,7 +3772,7 @@ namespace LightSpeed.Api.Client.V2Beta
         /// <summary>
         /// The client id is a unique transaction identifier. The client must provide this and is normally the transaction id from the client system.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("client_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("client_id", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string? Client_id { get; set; } = default!;
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
