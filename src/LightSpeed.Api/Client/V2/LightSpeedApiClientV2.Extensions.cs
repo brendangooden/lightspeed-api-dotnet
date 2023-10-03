@@ -152,4 +152,39 @@ public partial class LightSpeedApiClientV2
         };
         return reportConfig;
     }
+
+    /// <summary>
+    /// Attempt a test API call to make sure that the API key/URL are valid etc. 
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns>An object detailing if the response was successful, and if not, the message and/or HttpStatusCode returned from the API.</returns>
+    public async Task<ConnectionResponse> TryConnectAsync(CancellationToken cancellationToken = default)
+    {
+        var request = await CreateHttpRequestMessageAsync(cancellationToken).ConfigureAwait(false);
+        request.Method = HttpMethod.Get;
+
+        request.RequestUri = new Uri(Flurl.Url.Parse(BaseUrl).RemovePath().AppendPathSegment("api/2.0/outlets"));
+        
+        var responseMessage = await _httpClient.SendAsync(request, cancellationToken).ConfigureAwait(false);
+
+        var connectionResponse = new ConnectionResponse
+        {
+            Successful = responseMessage.IsSuccessStatusCode,
+            ResponseStatusCode = responseMessage.StatusCode
+        };
+
+        try
+        {
+            var response = await responseMessage.Content.ReadAsStringAsync(cancellationToken);
+            connectionResponse.Message = $"Response Status Code: {responseMessage.StatusCode}\r\n{response}";
+        }
+        catch (Exception ex)
+        {
+            // eat.
+            connectionResponse.Successful = false;
+            connectionResponse.Message = ex.Message;
+        }
+
+        return connectionResponse;
+    }
 }
