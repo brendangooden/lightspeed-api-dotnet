@@ -3566,7 +3566,7 @@ namespace LightSpeed.Api.Client.V2Beta
         /// <summary>
         /// The Sale ID.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("sale_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sale_id", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Guid? Sale_id { get; set; } = default!;
 
         /// <summary>
