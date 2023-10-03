@@ -3760,7 +3760,7 @@ namespace LightSpeed.Api.Client.V2Beta
         /// <summary>
         /// The Vend user id associated with the transaction.
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("user_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("user_id", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Guid? User_id { get; set; } = default!;
 
         /// <summary>
