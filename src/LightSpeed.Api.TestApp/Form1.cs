@@ -2,6 +2,7 @@ using LightSpeed.Api.Client;
 using LightSpeed.Api.Client.Configuration;
 using LightSpeed.Api.Client.V2;
 using LightSpeed.Api.Client.V2Beta;
+using LightSpeed.Api.Configuration;
 using LightSpeed.Api.TestApp.Models;
 using Newtonsoft.Json;
 
