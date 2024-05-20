@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace LightSpeed.Api.Client.Extensions;
+namespace LightSpeed.Api.Extensions;
 internal static class Extensions
 {
     internal static string ToJson(this object obj)

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using LightSpeed.Api.Client.Configuration.Interfaces;
+using LightSpeed.Api.Configuration.Interfaces;
 
-namespace LightSpeed.Api.Client.Configuration;
+namespace LightSpeed.Api.Configuration;
 
 /// <summary>
 /// Used for authenticating with LightSpeed API with a personal token.

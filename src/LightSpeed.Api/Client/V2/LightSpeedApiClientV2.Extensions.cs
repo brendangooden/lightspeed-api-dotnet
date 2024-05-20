@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
-using LightSpeed.Api.Client.Extensions;
+using LightSpeed.Api.Extensions;
 using LightSpeed.Api.Reporting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;

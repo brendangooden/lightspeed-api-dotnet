@@ -1,4 +1,4 @@
-﻿namespace LightSpeed.Api.Client.Configuration.Interfaces;
+﻿namespace LightSpeed.Api.Configuration.Interfaces;
 
 public interface ILightSpeedStore
 {

@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LightSpeed.Api.Client.Configuration.Interfaces;
+namespace LightSpeed.Api.Configuration.Interfaces;
 
 /// <summary>
 /// A base interface used by the LightSpeedApiClient on how to authenticate requests, and what the base URL is.

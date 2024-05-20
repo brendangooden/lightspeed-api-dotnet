@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LightSpeed.Api.Client.Configuration.Interfaces;
+using LightSpeed.Api.Configuration.Interfaces;
 using Newtonsoft.Json;
 
 namespace LightSpeed.Api.TestApp.Models;
