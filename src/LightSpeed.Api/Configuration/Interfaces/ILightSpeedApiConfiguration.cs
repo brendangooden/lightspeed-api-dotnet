@@ -12,9 +12,9 @@ public interface ILightSpeedApiConfiguration : ILightSpeedStore, IApiToken
 {
     /// <summary>
     /// The base URL of the API including the version.
-    /// Default is <c>https://{<see cref="ILightSpeedStore.StoreDomain"/>}.vendhq.com/api/2.0</c>
+    /// Default is <c>https://{<see cref="ILightSpeedStore.StoreDomain"/>}.retail.lightspeed.app/api/2.0</c>
     /// </summary>
-    string BaseUrl => $"https://{StoreDomain}.vendhq.com/api/2.0";
+    string BaseUrl => $"https://{StoreDomain}.retail.lightspeed.app/api/2.0";
     Task<HttpRequestMessage> CreateHttpRequestMessageAsync(CancellationToken cancellationToken)
     {
         var msg = new HttpRequestMessage();
