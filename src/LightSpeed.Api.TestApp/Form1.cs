@@ -12,6 +12,7 @@ public partial class Form1 : Form
     private LightSpeedApiClientV2Beta _apiClientBeta;
     private LightSpeedApiClientV2 _apiClient;
     private HttpClient _httpClient;
+
     public Form1()
     {
         InitializeComponent();
