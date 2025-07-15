@@ -15,13 +15,10 @@ public interface ILightSpeedApiConfiguration : ILightSpeedStore, IApiToken
     /// Default is <c>https://{<see cref="ILightSpeedStore.StoreDomain"/>}.retail.lightspeed.app/api/2.0</c>
     /// </summary>
     string BaseUrl => $"https://{StoreDomain}.retail.lightspeed.app/api/2.0";
-    Task<HttpRequestMessage> CreateHttpRequestMessageAsync(CancellationToken cancellationToken)
-    {
-        var msg = new HttpRequestMessage();
-
-        msg.Headers.Authorization = new AuthenticationHeaderValue("Bearer", ApiToken);
-
-        // no external calls required, so just return a completed task with the HttpRequestMessage object.
-        return Task.FromResult(msg);
-    }
+    /// <summary>
+    /// Required method to add the relevant authentication headers/etc. to the request.
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpRequestMessage> CreateHttpRequestMessageAsync(CancellationToken cancellationToken);
 }

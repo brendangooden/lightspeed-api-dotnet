@@ -1,4 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Net.Http.Headers;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Threading;
 using LightSpeed.Api.Configuration.Interfaces;
 
 namespace LightSpeed.Api.Configuration;
@@ -26,5 +30,20 @@ public class TokenApiConfiguration : ILightSpeedApiConfiguration
     {
         StoreDomain = storeDomain;
         ApiToken = apiToken;
+    }
+
+    /// <summary>
+    /// Required method to add the relevant authentication headers/etc. to the request.
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public Task<HttpRequestMessage> CreateHttpRequestMessageAsync(CancellationToken cancellationToken)
+    {
+        var msg = new HttpRequestMessage();
+
+        msg.Headers.Authorization = new AuthenticationHeaderValue("Bearer", ApiToken);
+
+        // no external calls required, so just return a completed task with the HttpRequestMessage object.
+        return Task.FromResult(msg);
     }
 }
