@@ -675,16 +675,60 @@ namespace LightSpeed.Api.Client.V2
             }
         }
 
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <summary>
-        /// List consignments
-        /// </summary>
-        /// <returns>OK</returns>
-        /// <exception cref="LightSpeedApiException ">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Consignment>> GetConsignmentsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <summary>List consignments.</summary>
+        /// <param name="cancellationToken">
+        ///     Cancellation token.
+        /// </param>
+        /// <param name="after">Lower version bound.</param>
+        /// <param name="before">Upper version bound.</param>
+        /// <param name="pageSize">Maximum items to return.</param>
+        /// <param name="status">
+        /// Consignment status:
+        /// <list type="bullet">
+        ///   <item><term>SUPPLIER</term>
+        ///     <description><c>OPEN → SENT → DISPATCHED → RECEIVED</c>
+        ///     (<c>CANCELLED</c> allowed except at <c>RECEIVED</c>).</description></item>
+        ///   <item><term>OUTLET</term>
+        ///     <description><c>OPEN → SENT → RECEIVED</c> (can be <c>CANCELLED</c> after <c>OPEN</c>).</description></item>
+        ///   <item><term>RETURN</term>
+        ///     <description><c>OPEN → SENT</c> or <c>CANCELLED</c>.</description></item>
+        ///   <item><term>STOCKTAKE</term>
+        ///     <description><c>STOCKTAKE</c>/<c>STOCKTAKE_SCHEDULED → STOCKTAKE_IN_PROGRESS →
+        ///     STOCKTAKE_IN_PROGRESS_PROCESSED → STOCKTAKE_COMPLETE</c>
+        ///     (<c>CANCELLED</c>/<c>CLOSED</c> allowed anytime).</description></item>
+        /// </list>
+        /// </param>
+        /// <param name="type">
+        /// Consignment type: <c>SUPPLIER</c>, <c>OUTLET</c>, <c>RETURN</c>, <c>STOCKTAKE</c>.
+        /// </param>
+        /// <returns>OK.</returns>
+        /// <exception cref="LightSpeedApiException">Server‑side error.</exception>
+        public virtual async System.Threading.Tasks.Task<ConsignmentCollection> ListConsignmentsAsync(long? after = null, long? before = null, int? page_size = null, string? type = null, string? status = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/consignments");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/consignments?");
+
+            if (after != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("after") + "=").Append(System.Uri.EscapeDataString(ConvertToString(after, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (before != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("before") + "=").Append(System.Uri.EscapeDataString(ConvertToString(before, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (page_size != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("page_size") + "=").Append(System.Uri.EscapeDataString(ConvertToString(page_size, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+            }
+            if (type != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("type") + "=").Append(System.Uri.EscapeDataString(type)).Append("&");
+            }
+            if (status != null)
+            {
+                urlBuilder_.Append(System.Uri.EscapeDataString("status") + "=").Append(System.Uri.EscapeDataString(status)).Append("&");
+            }
+            urlBuilder_.Length--;
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -718,7 +762,7 @@ namespace LightSpeed.Api.Client.V2
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.IReadOnlyList<Consignment>>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ConsignmentCollection>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new LightSpeedApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -8832,7 +8876,38 @@ namespace LightSpeed.Api.Client.V2
         }
 
     }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v12.0.0.0))")]
+    public partial class ConsignmentCollection
+    {
+        /// <summary>
+        /// An array of consignments.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("data", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.IReadOnlyList<Consignment>? Data { get; set; } = default!;
 
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties; }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static ConsignmentCollection FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ConsignmentCollection>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v12.0.0.0))")]
     public partial class ConsignmentProductCollection
     {
