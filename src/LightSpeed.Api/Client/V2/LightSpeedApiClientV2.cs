@@ -16870,6 +16870,9 @@ namespace LightSpeed.Api.Client.V2
         [System.Runtime.Serialization.EnumMember(Value = @"VOIDED")]
         VOIDED = 1024,
 
+        [System.Runtime.Serialization.EnumMember(Value = @"OPEN")]
+        OPEN = 2048
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v12.0.0.0))")]
