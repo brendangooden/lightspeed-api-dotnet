@@ -8547,7 +8547,7 @@ namespace LightSpeed.Api.Client.V2
         /// Auto-generated object ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Id { get; set; } = default!;
+        public System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// The store identifier.
@@ -8566,13 +8566,13 @@ namespace LightSpeed.Api.Client.V2
         /// The Vend register id that sales will be associated to.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("register_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Register_id { get; set; } = default!;
+        public System.Guid Register_id { get; set; } = default!;
 
         /// <summary>
         /// The Vend payment type id that sale payments will be associated to.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_type_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Payment_type_id { get; set; } = default!;
+        public System.Guid Payment_type_id { get; set; } = default!;
 
         /// <summary>
         /// The Vend outlet ids that count towards inventory.
@@ -9202,7 +9202,7 @@ namespace LightSpeed.Api.Client.V2
         /// Auto-generated object ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Id { get; set; } = default!;
+        public System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// Customer code used for claiming loyalty.
@@ -9214,7 +9214,7 @@ namespace LightSpeed.Api.Client.V2
         /// Customer group ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer_group_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Customer_group_id { get; set; } = default!;
+        public System.Guid Customer_group_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("enable_loyalty", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? Enable_loyalty { get; set; } = default!;
@@ -9496,7 +9496,7 @@ namespace LightSpeed.Api.Client.V2
         /// Customer group ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer_group_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Customer_group_id { get; set; } = default!;
+        public System.Guid Customer_group_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("enable_loyalty", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? Enable_loyalty { get; set; } = default!;
@@ -9754,7 +9754,7 @@ namespace LightSpeed.Api.Client.V2
         /// Auto-generated object ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Id { get; set; } = default!;
+        public System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// The customer group identifier.
@@ -9958,31 +9958,31 @@ namespace LightSpeed.Api.Client.V2
         /// Product ID
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Product_id { get; set; } = default!;
+        public System.Guid Product_id { get; set; } = default!;
 
         /// <summary>
         /// Product Brand ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_brand_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Product_brand_id { get; set; } = default!;
+        public System.Guid Product_brand_id { get; set; } = default!;
 
         /// <summary>
         /// Product Supplier ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_supplier_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Product_supplier_id { get; set; } = default!;
+        public System.Guid Product_supplier_id { get; set; } = default!;
 
         /// <summary>
         /// Product Type ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_type_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Product_type_id { get; set; } = default!;
+        public System.Guid Product_type_id { get; set; } = default!;
 
         /// <summary>
         /// Product Tag IDs.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_tag_ids", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.IReadOnlyList<string> Product_tag_ids { get; set; } = new System.Collections.Generic.List<string>();
+        public System.Collections.Generic.IReadOnlyList<System.Guid> Product_tag_ids { get; set; } = new System.Collections.Generic.List<System.Guid>();
 
         /// <summary>
         /// Product variant parent ID
@@ -10093,7 +10093,7 @@ namespace LightSpeed.Api.Client.V2
         /// The outlet ID for this sale
         /// </summary>
         [Newtonsoft.Json.JsonProperty("outlet_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Outlet_id { get; set; } = default!;
+        public System.Guid Outlet_id { get; set; } = default!;
 
         /// <summary>
         /// Indication whether the sale is tax inclusive or tax exclusive
@@ -10811,7 +10811,7 @@ namespace LightSpeed.Api.Client.V2
         /// Tax rate ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rate_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Rate_id { get; set; } = default!;
+        public System.Guid Rate_id { get; set; } = default!;
 
         /// <summary>
         /// Tax total.
@@ -11207,7 +11207,7 @@ namespace LightSpeed.Api.Client.V2
         /// Auto-generated object ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Id { get; set; } = default!;
+        public System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// The name of the payment type.
@@ -11306,7 +11306,7 @@ namespace LightSpeed.Api.Client.V2
         /// The ID of the customer group
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer_group_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Customer_group_id { get; set; } = default!;
+        public System.Guid Customer_group_id { get; set; } = default!;
 
         /// <summary>
         /// Auto-generated object ID.
@@ -11444,7 +11444,7 @@ namespace LightSpeed.Api.Client.V2
         /// The ID of the associated product.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Product_id { get; set; } = default!;
+        public System.Guid Product_id { get; set; } = default!;
 
         /// <summary>
         /// The ID of the Price Book this product belongs to.
@@ -11480,7 +11480,7 @@ namespace LightSpeed.Api.Client.V2
         /// The id for the tax rate
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tax_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Tax_id { get; set; } = default!;
+        public System.Guid Tax_id { get; set; } = default!;
 
         /// <summary>
         /// The format for the rounding
@@ -11810,13 +11810,19 @@ namespace LightSpeed.Api.Client.V2
         /// An array of tag IDs associated with this product.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_ids", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.IReadOnlyList<string>? Tag_ids { get; set; } = default!;
+        public System.Collections.Generic.IReadOnlyList<System.Guid>? Tag_ids { get; set; } = default!;
 
         /// <summary>
-        /// A list of tag objects.
+        /// A list of tag objects. See also <seealso cref="Tag_ids"/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("categories", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.IReadOnlyList<ProductCategory>? Categories { get; set; } = default!;
+        public System.Collections.Generic.IReadOnlyList<Tag>? Tags { get; set; } = default!;
+
+        /// <summary>
+        /// A list of tag objects. See also <seealso cref="Tag_ids"/>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_category", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public ProductCategory? ProductCategory { get; set; } = default!;
 
         /// <summary>
         /// A list of attributes
@@ -13471,13 +13477,13 @@ namespace LightSpeed.Api.Client.V2
         /// Auto-generated object ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Id { get; set; } = default!;
+        public System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// An identifier used to group together requests that occurred together as part of the same job or Vend API request.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("grouping_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Grouping_id { get; set; } = default!;
+        public System.Guid Grouping_id { get; set; } = default!;
 
         /// <summary>
         /// The HTTP method used to make the request.
