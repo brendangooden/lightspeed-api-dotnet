@@ -11738,6 +11738,13 @@ namespace LightSpeed.Api.Client.V2
         public string? Variant_parent_id { get; set; } = default!;
 
         /// <summary>
+        /// The ID of the product family this product belongs to.
+        /// Useful for grouping together variant products with their parent. 
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("family_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Guid FamilyId { get; set; } = default!;
+
+        /// <summary>
         /// The name of the variant product.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("variant_name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
