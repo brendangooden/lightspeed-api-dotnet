@@ -4165,7 +4165,7 @@ namespace LightSpeed.Api.Client.V2
         /// </summary>
         /// <param name="product_id">The product id</param>
         /// <exception cref="LightSpeedApiException ">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ProductResponse> GetProductByIDAsync(string product_id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<ProductResponse> GetProductByIDAsync(System.Guid product_id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             if (product_id == null)
                 throw new System.ArgumentNullException("product_id");
@@ -4239,7 +4239,7 @@ namespace LightSpeed.Api.Client.V2
         /// </summary>
         /// <param name="product_id">The product id</param>
         /// <exception cref="LightSpeedApiException ">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ImageResponse> UploadImageAsync(string product_id, Actions_image_upload_body body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<ImageResponse> UploadImageAsync(System.Guid product_id, Actions_image_upload_body body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             if (product_id == null)
                 throw new System.ArgumentNullException("product_id");
@@ -8258,7 +8258,7 @@ namespace LightSpeed.Api.Client.V2
         /// The `id` of the user executing the action registered by this event.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? User_id { get; set; } = default!;
+        public System.Guid User_id { get; set; } = default!;
 
         /// <summary>
         /// The type of the object involved in the event. This may be something like "security" for security events or the name of the table the action was performed on, like "vend_customer".
@@ -10457,13 +10457,13 @@ namespace LightSpeed.Api.Client.V2
         /// The ID of the product associated with this inventory record.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Product_id { get; set; } = default!;
+        public System.Guid Product_id { get; set; } = default!;
 
         /// <summary>
         /// The ID of the outlet associated with this inventory record.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("outlet_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outlet_id { get; set; } = default!;
+        public System.Guid Outlet_id { get; set; } = default!;
 
         /// <summary>
         /// Current inventory level.
@@ -10718,7 +10718,7 @@ namespace LightSpeed.Api.Client.V2
         /// Valid product ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Product_id { get; set; } = default!;
+        public System.Guid Product_id { get; set; } = default!;
 
         /// <summary>
         /// Quantity of product units included in the sale.
@@ -11150,7 +11150,7 @@ namespace LightSpeed.Api.Client.V2
         /// A valid register ID.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("register_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Register_id { get; set; } = default!;
+        public System.Guid Register_id { get; set; } = default!;
 
         /// <summary>
         /// A valid retailer payment type ID.
@@ -11336,7 +11336,7 @@ namespace LightSpeed.Api.Client.V2
         /// The ID of an outlet for which the Price Book should be used.+ type: GENERAL (string) - Internal value. Safe to ignore.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("outlet_id", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outlet_id { get; set; } = default!;
+        public System.Guid Outlet_id { get; set; } = default!;
 
         /// <summary>
         /// One of `In Store`, `Ecommerce`, `All Platforms`.
@@ -13201,7 +13201,7 @@ namespace LightSpeed.Api.Client.V2
         /// A valid ID of an Outlet that this register is associated with.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("outlet_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outlet_id { get; set; } = default!;
+        public System.Guid Outlet_id { get; set; } = default!;
 
         /// <summary>
         /// `0` for **Never**, `1` for **On Save/Layby/Account/Return**, `2` for **Always**.
@@ -13970,25 +13970,25 @@ namespace LightSpeed.Api.Client.V2
         /// Valid outlet ID for the retailer.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("outlet_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outlet_id { get; set; } = default!;
+        public System.Guid Outlet_id { get; set; } = default!;
 
         /// <summary>
         /// Valid register ID for the retailer.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("register_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Register_id { get; set; } = default!;
+        public System.Guid Register_id { get; set; } = default!;
 
         /// <summary>
         /// Valid user ID for the retailer.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? User_id { get; set; } = default!;
+        public System.Guid User_id { get; set; } = default!;
 
         /// <summary>
         /// Valid customer ID for the retailer.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Customer_id { get; set; } = default!;
+        public System.Guid Customer_id { get; set; } = default!;
 
         /// <summary>
         /// Invoice number which if provided, should use the prefix and suffix defined for the register.
@@ -15652,10 +15652,10 @@ namespace LightSpeed.Api.Client.V2
         public System.Guid Id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("product_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Product_id { get; set; } = default!;
+        public System.Guid Product_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("quote_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Quote_id { get; set; } = default!;
+        public System.Guid Quote_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Price { get; set; } = default!;
@@ -15667,7 +15667,7 @@ namespace LightSpeed.Api.Client.V2
         public double? Tax { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("tax_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Tax_id { get; set; } = default!;
+        public System.Guid Tax_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("product_tax_components", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.IReadOnlyList<QuotesProductsTaxComponents>? Product_tax_components { get; set; } = default!;
@@ -15718,19 +15718,19 @@ namespace LightSpeed.Api.Client.V2
         public string? Status { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("customer_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Customer_id { get; set; } = default!;
+        public System.Guid Customer_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("register_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Register_id { get; set; } = default!;
+        public System.Guid Register_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("retailer_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string? Retailer_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("user_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? User_id { get; set; } = default!;
+        public System.Guid User_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("outlet_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string? Outlet_id { get; set; } = default!;
+        public System.Guid Outlet_id { get; set; } = default!;
 
         [Newtonsoft.Json.JsonProperty("total_tax", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Total_tax { get; set; } = default!;
